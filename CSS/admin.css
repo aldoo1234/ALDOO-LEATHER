@@ -1,0 +1,78 @@
+body {
+font-family: Arial, sans-serif;
+background:#f3eadc;
+padding:20px;
+}
+
+
+.admin-container {
+max-width:500px;
+margin:auto;
+}
+
+
+h1 {
+text-align:center;
+color:#3b2a20;
+}
+
+
+h2 {
+text-align:center;
+color:#6b5444;
+margin-bottom:30px;
+}
+
+
+.admin-card {
+
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+}
+
+
+label {
+
+display:block;
+margin-top:15px;
+margin-bottom:8px;
+color:#3b2a20;
+
+}
+
+
+input,
+textarea {
+
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:8px;
+box-sizing:border-box;
+
+}
+
+
+textarea {
+
+height:120px;
+resize:none;
+
+}
+
+
+button {
+
+margin-top:25px;
+width:100%;
+padding:15px;
+border:none;
+border-radius:10px;
+background:#3b2a20;
+color:white;
+font-size:16px;
+
+}

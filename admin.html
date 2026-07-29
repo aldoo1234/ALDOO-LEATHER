@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin — ALDOO LEATHER</title>
+
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+
+<body>
+    <div id="admin-login" class="admin-container">
+
+<h1>
+ALDOO LEATHER
+</h1>
+
+<h2>
+Admin Login
+</h2>
+
+<div class="admin-card">
+
+<label>
+Password
+</label>
+
+<input type="password" id="admin-password" placeholder="Password">
+
+<button id="login-button">
+Login
+</button>
+
+</div>
+
+</div>
+
+
+<div class="admin-container" id="admin-panel" style="display:none;">
+
+
+<h1>
+ALDOO LEATHER
+</h1>
+
+<h2>
+Product Manager
+</h2>
+
+
+
+<div class="admin-card">
+
+
+<label>
+Product Name
+</label>
+
+<input type="text" placeholder="Product name">
+
+
+
+<label>
+Price
+</label>
+
+<input type="text" placeholder="Price">
+
+
+
+<label>
+Description
+</label>
+
+<textarea placeholder="Description"></textarea>
+<label>
+Category
+</label>
+
+<select id="category">
+
+<option value="Leather Bags">Leather Bags</option>
+<option value="Wallets">Wallets</option>
+<option value="Accessories">Accessories</option>
+<option value="Custom Orders">Custom Orders</option>
+<option value="Laptop & Documents">Laptop & Documents</option>
+
+</select>
+
+
+
+<label>
+Material
+</label>
+
+<input type="text" id="material" placeholder="Material">
+
+
+
+<label>
+Dimensions
+</label>
+
+<input type="text" id="dimensions" placeholder="Dimensions">
+
+
+
+<label>
+Upload Photos
+</label>
+
+<input type="file" id="photos" multiple accept="image/*">
+
+
+
+<label>
+Upload Video
+</label>
+
+<input type="file" id="video" accept="video/*">
+
+
+
+<button id="save-product-button">
+Save Product
+</button>
+
+<hr>
+
+<h2>
+Existing Products
+</h2>
+
+<div id="admin-products-list">
+
+</div>
+
+</div>
+<script type="module" src="js/admin.js"></script>
+
+
+
+</body>
+
+</html>
