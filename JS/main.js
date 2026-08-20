@@ -66,18 +66,20 @@ document.addEventListener("DOMContentLoaded", async () => {
                         >
                     `;
 
-                } else if (product.video) {
+               } else if (product.video) {
 
-                    imageHTML = `
-                        <video
-                            src="${product.video}"
-                            muted
-                            playsinline
-                            preload="metadata"
-                        ></video>
-                    `;
+    const videoThumbnail = product.video
+        .replace("/video/upload/", "/video/upload/so_1/")
+        .replace(".mov", ".jpg");
 
-                } else {
+    imageHTML = `
+        <img
+            src="${videoThumbnail}"
+            alt="${product.name}"
+        >
+    `;
+
+} else {
 
                     imageHTML = `
                         <img
