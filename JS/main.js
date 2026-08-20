@@ -376,16 +376,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                         );
 
 
-                    let thumbnail =
-                        product.video
-                            .replace(
-                                "/video/upload/",
-                                "/video/upload/so_1/"
-                            )
-                            .replace(
-                                ".mov",
-                                ".jpg"
-                            );
+                   let thumbnail = product.video
+    .replace("/video/upload/", "/video/upload/so_1/")
+    .replace(/\.(mp4|mov|webm)$/i, ".jpg");
 
 
                     videoImg.src =
