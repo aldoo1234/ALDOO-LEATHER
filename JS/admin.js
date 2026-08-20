@@ -1,8 +1,20 @@
-import { db } from "./firebase-config.js";
-import { collection, addDoc, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-const ADMIN_PASSWORD = "aldoo2026";
+import { db, auth } from "./firebase-config.js";
+
+import {
+    collection,
+    addDoc,
+    getDocs,
+    deleteDoc,
+    doc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+import {
+    signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
 
 const loginButton = document.querySelector("#login-button");
+const emailInput = document.querySelector("#admin-email");
 const passwordInput = document.querySelector("#admin-password");
 
 const adminLogin = document.querySelector("#admin-login");
@@ -11,18 +23,23 @@ const adminPanel = document.querySelector("#admin-panel");
 
 if (loginButton) {
 
-    loginButton.addEventListener("click", () => {
+    loginButton.addEventListener("click", async () => {
 
-        if (passwordInput.value === ADMIN_PASSWORD) {
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+
+        try {
+
+            await signInWithEmailAndPassword(auth, email, password);
 
             adminLogin.style.display = "none";
             adminPanel.style.display = "block";
 
-        
+        } catch (error) {
 
-        } else {
+            console.log(error);
 
-            alert("Wrong password");
+            alert("Wrong email or password");
 
         }
 
