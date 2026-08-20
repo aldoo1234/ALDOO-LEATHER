@@ -359,87 +359,47 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                 // VIDEO THUMBNAIL
 
-                if (product.video) {
+                // VIDEO THUMBNAIL
 
-                    const videoThumb =
-                        document.createElement(
-                            "div"
-                        );
+if (product.video) {
 
-                    videoThumb.className =
-                        "video-thumb";
+    const videoThumb = document.createElement("div");
+    videoThumb.className = "video-thumb";
 
+    const video = document.createElement("video");
 
-                    const videoImg =
-                        document.createElement(
-                            "img"
-                        );
+    video.src = product.video;
+    video.muted = true;
+    video.playsInline = true;
+    video.preload = "metadata";
 
+    video.setAttribute("playsinline", "");
+    video.setAttribute("muted", "");
 
-                   let thumbnail = product.video
-    .replace("/video/upload/", "/video/upload/so_1/")
-    .replace(/\.(mp4|mov|webm)$/i, ".jpg");
+    const icon = document.createElement("span");
+    icon.innerHTML = "▶️";
 
+    videoThumb.appendChild(video);
+    videoThumb.appendChild(icon);
 
-                    videoImg.src =
-                        thumbnail;
+    videoThumb.onclick = () => {
 
-                    videoImg.className =
-                        "video-thumb-image";
+        if (mainImage) {
+            mainImage.style.display = "none";
+        }
 
+        if (mainVideo) {
+            mainVideo.src = product.video;
+            mainVideo.style.display = "block";
+            mainVideo.controls = true;
+            mainVideo.playsInline = true;
+        }
 
-                    const icon =
-                        document.createElement(
-                            "span"
-                        );
+    };
 
-                    icon.innerHTML =
-                        "▶️";
+    thumbs.appendChild(videoThumb);
 
-
-                    videoThumb.appendChild(
-                        videoImg
-                    );
-
-                    videoThumb.appendChild(
-                        icon
-                    );
-
-
-                    videoThumb.onclick = () => {
-
-                        if (mainImage) {
-
-                            mainImage.style.display =
-                                "none";
-
-                        }
-
-
-                        if (mainVideo) {
-
-                            mainVideo.src =
-                                product.video;
-
-                            mainVideo.style.display =
-                                "block";
-
-                            mainVideo.controls =
-                                true;
-
-                            mainVideo.playsInline =
-                                true;
-
-                        }
-
-                    };
-
-
-                    thumbs.appendChild(
-                        videoThumb
-                    );
-
-                }
+}
 
             }
 
